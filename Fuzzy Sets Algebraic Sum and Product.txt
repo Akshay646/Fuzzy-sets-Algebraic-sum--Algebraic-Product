@@ -1,0 +1,54 @@
+//@Akshay Yadav
+
+#include <bits/stdc++.h>
+#define loop(n) for(int i = 0 ; i < n ; i++)
+#define f float
+using namespace std;
+
+//Algevraic Sum
+void algebraicSum(f a[], f b[], int n){
+    
+    vector<f> aSum(n);
+    
+    cout << "The Algebraic Sum of two Fuzzy sets is" << "\n";
+    loop(n){
+            aSum[i] = (a[i] + b[i]) - (a[i] * b[i]);
+    }
+    
+    loop(n)
+        printf("%.2f\t", aSum[i]);
+}
+
+//Algebraic Product
+void algebraicProduct(f a[], f b[], int n){
+    
+    vector<f> aProduct(n);
+    
+    cout << "The Algebraic Product of two Fuzzy sets is" << "\n";
+    loop(n){
+            aProduct[i] = a[i] * b[i];
+    }
+    
+    loop(n)
+        printf("%.2f\t", aProduct[i]);
+}
+
+signed main()
+{
+   int n;
+   cin >> n;
+   f a[n], b[n];
+   
+   loop(n)
+    cin >> a[i];
+   
+   loop(n)
+    cin >> b[i];
+    
+   algebraicSum(a, b, n);
+   
+   cout<<"\n \n";
+   
+   algebraicProduct(a, b, n);
+     return 0;
+}
